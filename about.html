@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Beans Web</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Consolas, monospace;
+            background-color: #FFFFFF;
+            color: #000000;
+            text-align: center;
+        }
+        header {
+            background-color: #a3c5e8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo {
+            width: 90px;
+            height: 90px;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2f4f4f;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .settings {
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            top: 50px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+        }
+
+        .dropdown a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-family: Consolas, monospace;
+            cursor: pointer;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .settings:hover .dropdown {
+            display: block;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            width: 34px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 50px;
+            transition: 0.4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #4da6ff;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #156082;
+            padding: 5px;
+            gap: 50px;
+        }
+        nav a {
+            font-family: Consolas, monospace;
+            padding: 12px 24px;
+            color: #000;
+            background-color: #4da6ff;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #000;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav a.yellow {
+            background-color: #ffcc33;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #ffdb4d;
+        }
+        h1 {
+            font-family: Consolas, monospace;
+            font-size: 36px;
+            font-weight: normal;
+            text-decoration: underline;
+            color: #2f4f4f;
+        }
+        .text {
+            font-family: Consolas, monospace;
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .features {
+            font-family: Consolas, monospace;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+			padding: 50px
+        }
+        body.dark {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .slider.dark {
+            background-color: #4da6ff;
+        }
+
+        h1.dark {
+            color: #a6c8ff;
+        }
+		@media (max-width:1400px) {
+			nav{
+				gap: 20px;
+				flex-wrap: wrap;
+			}
+			nav a{
+				padding: 10px 16px;
+        		min-width: 100px;
+        		font-size: 14px;
+			}
+		}
+    </style>
+</head>
+<body>
+<header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="title">Hot Beans Web</div>
+    <div class="settings">
+        <img src="settings.png" alt="Settings" class="settings-icon" />
+        <div class="dropdown">
+            <a href="#">Dark Mode <label class="switch"><input type="checkbox" id="darkMode"><span class="slider"></span></label></a>
+        </div>
+    </div>
+</header>
+<nav>
+    <a href="index.html" class="yellow">Home</a>
+    <a>About Us</a>
+    <a href="profiles.html" class="yellow">Existing Profiles</a>
+    <a href="jobs.html" class="yellow">Job Info</a>
+    <a href="apply.html" class="yellow">Apply</a>
+    <a href="courses.html" class="yellow">Courses</a>
+</nav>
+<div class="main">
+    <h1>ABOUT US</h1>
+</div>
+<div class="text">
+        <p>Hot Beans Web is a website development company that has been established in 2007. It started out with just a small group of friends who were ambitious to show and express their talents in developing websites. We strive to have a passion for each of our projects and to develop better or more skills. We are looking for more people to join our journey!</p>
+        <p>Our company provides features that can interest you into joining, such as:</p>
+</div>
+<div class="features">
+    <div>
+        <img src="preference.png" alt="Preferences" width="200">
+        <p><strong>PREFERENCE</strong><br>We have flexible working hours, so you have the choice of when you work and where (whether it is in the HQ or your home) so you are comfortable when working!</p>
+    </div>
+    <div>
+        <img src="support.png" alt="Support holding hands" width="200">
+        <p><strong>SUPPORT</strong><br>Teamwork is useful in website development. If you get stuck and you don't know what to do, other employees can provide support for you to help you complete your task!</p>
+    </div>
+<script>
+    const darkModeCheckbox = document.getElementById('darkMode');
+    const body = document.body;
+    const h1 = document.querySelector('h1');
+
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark');
+        h1.classList.add('dark');
+        darkModeCheckbox.checked = true;
+    }
+
+    darkModeCheckbox.addEventListener('change', () => {
+        if (darkModeCheckbox.checked) {
+            body.classList.add('dark');
+            h1.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark');
+            h1.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+</body>
+</html>
